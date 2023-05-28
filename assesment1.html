@@ -1,0 +1,27 @@
+<html>
+   <head>
+      <title>morvels</title>
+   </head>
+   <body>
+      <input  class="input" type="text" placeholder="type"/>
+      <button  class="button" onclick="enter()">SEARCH</button>
+      <div class="data"></div>
+   </body>
+   <script>
+      async function fetchData(url){
+                const response = await fetch(url);
+                const jsonData = await response.json()
+                return jsonData
+          }
+          async function enter(){
+              let button=document.querySelector(".button");
+              let input=document.querySelector(".input").value;
+              let maindiv=document.querySelector("data");
+              let data=await fetchData(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith={name}&apikey=3ad548118680d3dad3f194ff9e289c93&hash=2bf68c80955bd4f084b8fe653c6683a0&ts=1685222640625
+`) 
+              //console.log(data);
+              
+       }
+   </script>
+</html>
+
